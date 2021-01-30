@@ -1,16 +1,15 @@
 package com.weather.backend.location;
 
 import com.weather.exception.BadRequestException;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 public class LocationService {
 
     private final LocationRepository locationRepository;
 
-    public LocationService(LocationRepository locationRepository) {
-        this.locationRepository = locationRepository;
-    }
+
 
     public Location createLocation(String city, String region, String country, String longitude, String latitude) {
         if (city == null || city.isBlank()) {
